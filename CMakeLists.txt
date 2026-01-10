@@ -20,9 +20,6 @@ find_package(Threads REQUIRED)
 find_package(CURL REQUIRED)
 find_package(OpenSSL REQUIRED)
 
-# Third-party libraries (header-only)
-add_subdirectory(third_party)
-
 # Source files
 set(SOURCES
     src/core/types.cpp
@@ -106,6 +103,8 @@ endif()
 # Enable testing
 option(ENABLE_TESTING "Enable tests" ON)
 if(ENABLE_TESTING)
+    # Third-party libraries (header-only)
+    add_subdirectory(third_party)
     enable_testing()
     add_subdirectory(tests)
 endif()
