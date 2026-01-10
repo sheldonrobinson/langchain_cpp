@@ -17,7 +17,7 @@ include_directories(include)
 
 # Find required packages
 find_package(Threads REQUIRED)
-find_package(CURL REQUIRED)
+# find_package(CURL REQUIRED)
 find_package(OpenSSL REQUIRED)
 
 # Source files
@@ -104,7 +104,7 @@ endif()
 option(ENABLE_TESTING "Enable tests" ON)
 if(ENABLE_TESTING)
     # Third-party libraries (header-only)
-    add_subdirectory(third_party)
+    add_subdirectory(third_party/Catch2)
     enable_testing()
     add_subdirectory(tests)
 endif()
