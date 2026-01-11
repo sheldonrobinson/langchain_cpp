@@ -20,7 +20,7 @@ include_directories(include)
 
 # Find required packages
 find_package(Threads REQUIRED)
-find_package(CURL REQUIRED)
+# find_package(CURL REQUIRED)
 find_package(OpenSSL REQUIRED)
 
 # Source files
@@ -83,7 +83,7 @@ add_library(langchain_cpp SHARED ${SOURCES} ${HEADERS})
 else()
 add_library(langchain_cpp STATIC ${SOURCES} ${HEADERS})
 endif()
-target_link_libraries(langchain_cpp Threads::Threads CURL::libcurl OpenSSL::SSL OpenSSL::Crypto)
+target_link_libraries(langchain_cpp Threads::Threads OpenSSL::SSL OpenSSL::Crypto) #  CURL::libcurl
 target_include_directories(langchain_cpp PUBLIC include)
 
 # Compiler-specific options

@@ -173,7 +173,6 @@ set_target_properties(# Specifies the target library.
 					   IMPORTED_IMPLIB				 ${ORT_BUILD_IMPORTLIBPATH}
 					   INTERFACE_INCLUDE_DIRECTORIES $<BUILD_INTERFACE:${ORT_BINARY_DIR}/include> $<BUILD_INTERFACE:${ORT_BINARY_DIR}/include/onnxruntime>
 					 )
-# target_include_directories(ort PUBLIC $<BUILD_INTERFACE:${ORT_BINARY_DIR}/include> $<BUILD_INTERFACE:${ORT_BINARY_DIR}/include/onnxruntime>)
 if (MSVC)
 	set_target_properties(ort PROPERTIES 
 				PDB_OUTPUT_DIRECTORY $<INSTALL_INTERFACE:${ORT_BUILD_DIR}/$<CONFIG>>
@@ -382,7 +381,6 @@ if(NOT TARGET ort-genai)
 						   IMPORTED_IMPLIB ${OGA_BUILD_IMPORTLIBPATH}
 						   INTERFACE_INCLUDE_DIRECTORIES $<BUILD_INTERFACE:${OGA_BINARY_DIR}/include>
 						 )
-	# target_include_directories(ort-genai PUBLIC $<BUILD_INTERFACE:${OGA_BINARY_DIR}/include>)
 	if (MSVC)
 		set_target_properties(ort-genai PROPERTIES 
 					PDB_OUTPUT_DIRECTORY $<INSTALL_INTERFACE:${OGA_BUILD_PROJECT_DIR}>
