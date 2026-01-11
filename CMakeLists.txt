@@ -11,6 +11,7 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
+include(GNUInstallDirs)
 
 # Include directories
 include_directories(include)
@@ -75,7 +76,11 @@ set(HEADERS
 )
 
 # Create main library
-add_library(langchain_cpp ${SOURCES} ${HEADERS})
+if(BUILD_SHARED_LIBS)
+add_library(langchain_cpp SHARED ${SOURCES} ${HEADERS})
+else()
+add_library(langchain_cpp STATIC ${SOURCES} ${HEADERS})
+endif()
 target_link_libraries(langchain_cpp Threads::Threads CURL::libcurl OpenSSL::SSL OpenSSL::Crypto)
 target_include_directories(langchain_cpp PUBLIC include)
 
@@ -111,13 +116,13 @@ endif()
 
 # Installation
 install(TARGETS langchain_cpp
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 install(DIRECTORY include/langchain
-    DESTINATION include
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
 # Examples
