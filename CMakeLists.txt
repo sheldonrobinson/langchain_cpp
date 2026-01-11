@@ -12,9 +12,9 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 include(GNUInstallDirs)
-if(PROJECT_IS_TOP_LEVEL)
-	include(cmake/ORTGenAI.cmake)
-endif()
+# if(PROJECT_IS_TOP_LEVEL)
+# 	include(cmake/ORTGenAI.cmake)
+# endif()
 # Include directories
 include_directories(include)
 
