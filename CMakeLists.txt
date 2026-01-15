@@ -45,8 +45,9 @@ set(SOURCES
   src/metrics/metrics.cpp
   src/distributed/distributed_processing.cpp
   src/persistence/persistence.cpp
-  src/security/security.cpp
 )
+# include/langchain/security/security.hpp
+# src/security/security.cpp
 
 # Header files
 set(HEADERS
@@ -74,7 +75,6 @@ set(HEADERS
   include/langchain/metrics/metrics.hpp
   include/langchain/distributed/distributed_processing.hpp
   include/langchain/persistence/persistence.hpp
-  include/langchain/security/security.hpp
 )
 
 # Create main library
