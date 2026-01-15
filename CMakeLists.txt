@@ -89,8 +89,6 @@ target_include_directories(langchain_cpp PUBLIC include)
 # Compiler-specific options
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(langchain_cpp PRIVATE
-        -O3
-        -march=native
         -Wall
         -Wextra
         -Wpedantic
@@ -100,8 +98,6 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_compile_options(langchain_cpp PRIVATE
-        /O2
-        /permissive-
         /W4
         /WX
     )
