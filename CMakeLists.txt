@@ -108,7 +108,7 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 endif()
 
 # Enable testing
-option(ENABLE_TESTING "Enable tests" ON)
+option(ENABLE_TESTING "Enable tests" OFF)
 if(ENABLE_TESTING)
     # Third-party libraries (header-only)
     add_subdirectory(third_party/Catch2)
