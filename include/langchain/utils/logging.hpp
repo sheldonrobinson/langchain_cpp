@@ -8,6 +8,7 @@
 #include <sstream>
 #include <iostream>
 #include <memory>
+#include <ctime>
 
 namespace langchain::utils {
 
