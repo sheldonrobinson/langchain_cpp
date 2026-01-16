@@ -93,13 +93,11 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         -Wextra
         -Wpedantic
         -Wno-unused-parameter
-        -flto
     )
-    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+#   set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_compile_options(langchain_cpp PRIVATE
-        /W4
-        /WX
+        /Wall
     )
 endif()
 
