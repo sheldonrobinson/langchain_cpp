@@ -8,6 +8,7 @@
 #include <future>
 #include <iterator>
 #include <exception>
+#include <iterator>
 
 namespace langchain {
 
