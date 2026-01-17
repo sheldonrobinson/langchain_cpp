@@ -96,6 +96,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     )
 #   set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
     target_compile_options(langchain_cpp PRIVATE
         /Wall
     )
